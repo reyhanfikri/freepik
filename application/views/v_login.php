@@ -13,7 +13,7 @@
   	<div class="col-md-3 col-md-offset-2 image">
         <img src="assets/img/Picture1.png" style=width:300px;height:300px;">
     </div>
-    <div class="col-md-4 form-login">
+    <div class="col-md-offset-1 col-md-4 form-login">
     
     <?php
     /* handle error */

@@ -6,15 +6,15 @@
 <body>
 	<form action="<?php echo base_url()."login_sementara"; ?>" method="post">
 		<?php
-			echo $errorUsername; 
-			if ($errorUsername != ""){
+			echo $error1; 
+			if ($error1 != ""){
 				echo "<br>";
 			}
 		?>
 		Username: <input type="text" name="username" value="<?php echo $username; ?>"><br><br>
 		<?php 
-			echo $errorPassword;
-			if ($errorPassword != ""){
+			echo $error2;
+			if ($error2 != ""){
 				echo "<br>";
 			}
 		?>

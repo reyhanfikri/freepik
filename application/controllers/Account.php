@@ -42,20 +42,20 @@ class Account extends CI_Controller {
 
 				if ($username == "" && $password == ""){
 
-					$data['errorUsername'] = "Username belum diisi";
-					$data['errorPassword'] = "Password belum diisi";
+					$data['error1'] = "Username belum diisi";
+					$data['error2'] = "Password belum diisi";
 					$this->load->view('v_login_sementara', $data);
 
 				}else if ($username == ""){
 
-					$data['errorUsername'] = "Username belum diisi";
-					$data['errorPassword'] = "";
+					$data['error1'] = "Username belum diisi";
+					$data['error2'] = "";
 					$this->load->view('v_login_sementara', $data);
 
 				}else if ($password == ""){
 
-					$data['errorUsername'] = "";
-					$data['errorPassword'] = "Password belum diisi";
+					$data['error1'] = "";
+					$data['error2'] = "Password belum diisi";
 					$data['username'] = $username;
 					$this->load->view('v_login_sementara', $data);
 
@@ -66,8 +66,8 @@ class Account extends CI_Controller {
 					if ($validation == "Username tidak ditemukan"
 						|| $validation == "Password tidak benar"){
 
-						$data['errorUsername'] = $validation;
-						$data['errorPassword'] = "";
+						$data['error1'] = $validation;
+						$data['error2'] = "";
 						$data['username'] = $username;
 						$this->load->view('v_login_sementara', $data);
 
@@ -93,8 +93,8 @@ class Account extends CI_Controller {
 
 			}else{
 
-				$data['errorUsername'] = "";
-				$data['errorPassword'] = "";
+				$data['error1'] = "";
+				$data['error2'] = "";
 				$data['username'] = "";
 				$this->load->view('v_login_sementara', $data);
 
@@ -121,82 +121,93 @@ class Account extends CI_Controller {
 
 	public function register_sementara()
 	{
+
+		$data['error1'] = "";
+		$data['error2'] = "";
+		$data['error3'] = "";
+		$data['username'] = "";
+		$data['email'] = "";
+
 		if ($this->input->post('submit') !== null){
 
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$email = $this->input->post('email');
-			$data['username'] = "";
-			$data['email'] = "";
 
 			if ($username == "" && $password == "" && $email == ""){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "Password belum diisi";
-				$data['errorEmail'] = "Email belum diisi";
+				$data['error1'] = "Username belum diisi";
+				$data['error2'] = "Password belum diisi";
+				$data['error3'] = "Email belum diisi";
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($username == "" && $password == ""){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "Password belum diisi";
-				$data['errorEmail'] = "";
+				$data['error1'] = "Username belum diisi";
+				$data['error2'] = "Password belum diisi";
 				$data['email'] = $email;
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($username == "" && $email == ""){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "";
-				$data['errorEmail'] = "Email belum diisi";
+				$data['error1'] = "Username belum diisi";
+				$data['error3'] = "Email belum diisi";
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($password == "" && $email == ""){
 
-				$data['errorUsername'] = "";
-				$data['errorPassword'] = "Password belum diisi";
-				$data['errorEmail'] = "Email belum diisi";
+				$data['error2'] = "Password belum diisi";
+				$data['error3'] = "Email belum diisi";
 				$data['username'] = $username;
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($username == ""){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "";
-				$data['errorEmail'] = "";
+				$data['error1'] = "Username belum diisi";
 				$data['email'] = $email;
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($email == ""){
 
-				$data['errorUsername'] = "";
-				$data['errorPassword'] = "";
-				$data['errorEmail'] = "Email belum diisi";
+				$data['error3'] = "Email belum diisi";
 				$data['username'] = $username;
 				$this->load->view('v_register_sementara', $data);
 
 			}else if ($password == ""){
 
-				$data['errorUsername'] = "";
-				$data['errorPassword'] = "Password belum diisi";
-				$data['errorEmail'] = "";
+				$data['error2'] = "Password belum diisi";
 				$data['username'] = $username;
 				$data['email'] = $email;
 				$this->load->view('v_register_sementara', $data);
 
 			}else{
 
-				redirect(base_url());
+				if ($this->UserAccountModel->getUserData($username) == null){
+
+					if ($this->UserAccountModel->getUserDatabyEmail($email) == null){
+
+						redirect(base_url());
+
+					}else {
+
+						$data['error3'] = "Email sudah digunakan";
+						$this->load->view('v_register_sementara', $data);
+
+					}
+
+				}else {
+
+					$data['error3'] = "Username sudah digunakan";
+					$this->load->view('v_register_sementara', $data);
+
+				}
+
+				
 
 			}
 
 		}else{
 
-			$data['errorUsername'] = "";
-			$data['errorPassword'] = "";
-			$data['errorEmail'] = "";
-			$data['username'] = "";
-			$data['email'] = "";
 			$this->load->view('v_register_sementara', $data);
 
 		}

@@ -127,6 +127,7 @@ class Account extends CI_Controller {
 		$data['error3'] = "";
 		$data['username'] = "";
 		$data['email'] = "";
+		$data['register'] = "";
 
 		if ($this->input->post('submit') !== null){
 
@@ -186,7 +187,9 @@ class Account extends CI_Controller {
 
 					if ($this->UserAccountModel->getUserDatabyEmail($email) == null){
 
-						redirect(base_url());
+						$this->UserAccountModel->insertData($email, $username, $password);
+						$data['register'] = "Register sukses!";
+						$this->load->view('v_register_sementara', $data);
 
 					}else {
 

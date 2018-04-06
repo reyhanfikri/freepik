@@ -45,6 +45,14 @@
 
 		}
 
+		public function getUserDatabyEmail($xemail){
+
+			$query = $this->db->query("SELECT * FROM t_user_account WHERE email = '".$xemail."' LIMIT 1;");
+
+			return $query->row();
+
+		}
+
 		public function setCookie($xusername){
 
        		set_cookie('user', $xusername, 60 * 60 * 24);

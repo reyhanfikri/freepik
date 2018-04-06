@@ -28,7 +28,6 @@
 
         <div class="outter-form-login">
         <div class="logo-login">
-            <br>
         </div>
             <form action="check-login.php" class="inner-login" method="post">
             <h2 class="text-center title-login">User Login</h2>
@@ -43,10 +42,6 @@
                 </div>
                 <br>
                 <input type="submit" class="btn btn-block btn-custom-green" value="Login" />
-                
-                <div class="text-center forget">
-                    <p><br><br></p>
-                </div>
             </form>
         </div>
     </div>

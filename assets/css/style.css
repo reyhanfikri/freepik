@@ -9,14 +9,20 @@ body{
     margin-left: 10%;
 }
 .outter-form-login {
-    padding: 20px;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 75px;
     background: #D3D3D3;
-    position: relative;
-    border-radius: 5px;
+    position: fixed;
+    border-radius: 30px;
 }
 
 .inner-login .form-control {
-    background: #EEEEEE;
+    background: WHITE;
+    border-radius: 20px;
+    width: 100%;
+    padding-right: 150px;
 }
 h3.title-login {
     font-size: 20px;
@@ -30,4 +36,5 @@ h3.title-login {
 .btn-custom-green {
     background: #4155f4;
     color: #fff;
+    border-radius: 20px;
 }

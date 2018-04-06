@@ -24,6 +24,7 @@ class Account extends CI_Controller {
 
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
+			$data['username'] = "";
 
 			if ($username == "" && $password == ""){
 
@@ -41,6 +42,7 @@ class Account extends CI_Controller {
 
 				$data['errorUsername'] = "";
 				$data['errorPassword'] = "Password belum diisi";
+				$data['username'] = $username;
 				$this->load->view('v_login_sementara', $data);
 
 			}else{
@@ -52,6 +54,7 @@ class Account extends CI_Controller {
 
 					$data['errorUsername'] = $validation;
 					$data['errorPassword'] = "";
+					$data['username'] = $username;
 					$this->load->view('v_login_sementara', $data);
 
 				}else {
@@ -66,6 +69,7 @@ class Account extends CI_Controller {
 
 			$data['errorUsername'] = "";
 			$data['errorPassword'] = "";
+			$data['username'] = "";
 			$this->load->view('v_login_sementara', $data);
 
 		}		

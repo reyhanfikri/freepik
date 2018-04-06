@@ -11,7 +11,7 @@
 				echo "<br>";
 			}
 		?>
-		Username: <input type="text" name="username"><br><br>
+		Username: <input type="text" name="username" value="<?php echo $username; ?>"><br><br>
 		<?php 
 			echo $errorPassword;
 			if ($errorPassword != ""){

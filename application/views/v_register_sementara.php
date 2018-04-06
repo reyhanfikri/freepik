@@ -6,6 +6,13 @@
 <body>
 	<form action="<?php echo base_url()."register_sementara"; ?>" method="post">
 		<?php
+			echo $errorEmail; 
+			if ($errorEmail != ""){
+				echo "<br>";
+			}
+		?>
+		Email: <input type="email" name="email" value="<?php echo $email; ?>"><br><br>
+		<?php
 			echo $errorUsername; 
 			if ($errorUsername != ""){
 				echo "<br>";

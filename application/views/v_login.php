@@ -10,10 +10,10 @@
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
-  	<div class="col-md-1 image">
+  	<div class="col-md-3 col-md-offset-2 image">
         <img src="assets/img/Picture1.png" style=width:300px;height:300px;">
     </div>
-    <div class="col-md-4 col-md-offset-3 form-login">
+    <div class="col-md-4 form-login">
     
     <?php
     /* handle error */

@@ -45,7 +45,20 @@ class Account extends CI_Controller {
 
 			}else{
 
-				redirect(base_url());
+				$validation = $this->UserAccountModel->loginDataValidation($username, $password);
+
+				if ($validation == "Username tidak ditemukan"
+					|| $validation == "Password tidak benar"){
+
+					$data['errorUsername'] = $validation;
+					$data['errorPassword'] = "";
+					$this->load->view('v_login_sementara', $data);
+
+				}else {
+
+					redirect(base_url());
+
+				}
 
 			}
 

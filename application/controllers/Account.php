@@ -15,7 +15,11 @@ class Account extends CI_Controller {
 
 	public function logout()
 	{
-		delete_cookie('user');
+		if ($this->UserAccountModel->getCookie() !== null){
+
+			delete_cookie('user');
+
+		}
 		redirect(base_url()."login_sementara");
 	}
 

@@ -17,4 +17,14 @@ class Account extends CI_Controller {
 	{
 		$this->load->view('v_register');
 	}
+
+	public function login_sementara()
+	{
+		$this->load->view('v_login_sementara');
+	}
+
+	public function register_sementara()
+	{
+		$this->load->view('v_register_sementara');
+	}
 }

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Admin extends CI_Controller {
 
 	public function index()
 	{
@@ -12,19 +12,19 @@ class Home extends CI_Controller {
 
 			$user_data = $this->UserAccountModel->getUserData($cookie);
 
-			if ($user_data->role == "admin"){
+			if ($user_data->role == "user"){
 
-				redirect(base_url()."admin");
+				redirect(base_url());
 
-			}else {
+			}else{
 
-				$this->load->view('v_home');
-
+				$this->load->view('v_admin');
+				
 			}
 
-		}else {
+		}else{
 
-			$this->load->view('v_home');
+			redirect(base_url());
 
 		}
 	}

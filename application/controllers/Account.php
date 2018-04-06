@@ -13,6 +13,11 @@ class Account extends CI_Controller {
 		$this->load->view('v_login');
 	}
 
+	public function logout()
+	{
+		redirect(base_url());
+	}
+
 	public function register()
 	{
 		$this->load->view('v_register');

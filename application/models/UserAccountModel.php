@@ -45,6 +45,28 @@
 
 		}
 
+		public function setCookie($xusername){
+
+       		set_cookie('user', $xusername, 60);
+
+		}
+
+		public function getCookie(){
+
+       		$cookie = get_cookie('user', TRUE);
+
+       		if ($cookie != NULL){
+
+       			return $cookie;
+
+       		}else {
+
+       			return null;
+
+       		}
+
+		}
+
 	}
 
 ?>

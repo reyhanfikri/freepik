@@ -15,7 +15,8 @@ class Account extends CI_Controller {
 
 	public function logout()
 	{
-		redirect(base_url());
+		delete_cookie('user');
+		redirect(base_url()."login_sementara");
 	}
 
 	public function register()
@@ -25,59 +26,71 @@ class Account extends CI_Controller {
 
 	public function login_sementara()
 	{
-		if ($this->input->post('submit') !== null){
 
-			$username = $this->input->post('username');
-			$password = $this->input->post('password');
-			$data['username'] = "";
+		if ($this->UserAccountModel->getCookie() == null){
 
-			if ($username == "" && $password == ""){
+			if ($this->input->post('submit') !== null){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "Password belum diisi";
-				$this->load->view('v_login_sementara', $data);
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+				$data['username'] = "";
 
-			}else if ($username == ""){
+				if ($username == "" && $password == ""){
 
-				$data['errorUsername'] = "Username belum diisi";
-				$data['errorPassword'] = "";
-				$this->load->view('v_login_sementara', $data);
+					$data['errorUsername'] = "Username belum diisi";
+					$data['errorPassword'] = "Password belum diisi";
+					$this->load->view('v_login_sementara', $data);
 
-			}else if ($password == ""){
+				}else if ($username == ""){
 
-				$data['errorUsername'] = "";
-				$data['errorPassword'] = "Password belum diisi";
-				$data['username'] = $username;
-				$this->load->view('v_login_sementara', $data);
-
-			}else{
-
-				$validation = $this->UserAccountModel->loginDataValidation($username, $password);
-
-				if ($validation == "Username tidak ditemukan"
-					|| $validation == "Password tidak benar"){
-
-					$data['errorUsername'] = $validation;
+					$data['errorUsername'] = "Username belum diisi";
 					$data['errorPassword'] = "";
+					$this->load->view('v_login_sementara', $data);
+
+				}else if ($password == ""){
+
+					$data['errorUsername'] = "";
+					$data['errorPassword'] = "Password belum diisi";
 					$data['username'] = $username;
 					$this->load->view('v_login_sementara', $data);
 
-				}else {
+				}else{
 
-					redirect(base_url());
+					$validation = $this->UserAccountModel->loginDataValidation($username, $password);
+
+					if ($validation == "Username tidak ditemukan"
+						|| $validation == "Password tidak benar"){
+
+						$data['errorUsername'] = $validation;
+						$data['errorPassword'] = "";
+						$data['username'] = $username;
+						$this->load->view('v_login_sementara', $data);
+
+					}else {
+
+						$this->UserAccountModel->setCookie($username);
+						redirect(base_url());
+
+					}
 
 				}
 
-			}
+			}else{
+
+				$data['errorUsername'] = "";
+				$data['errorPassword'] = "";
+				$data['username'] = "";
+				$this->load->view('v_login_sementara', $data);
+
+			}	
 
 		}else{
 
-			$data['errorUsername'] = "";
-			$data['errorPassword'] = "";
-			$data['username'] = "";
-			$this->load->view('v_login_sementara', $data);
+			redirect(base_url());
 
-		}		
+		}
+
+			
 	}
 
 	public function register_sementara()

@@ -75,6 +75,11 @@
 
 		}
 
+		public function insertData($xemail, $xusername, $xpassword){
+
+			$query = $this->db->query("INSERT INTO t_user_account VALUES (null, '".$xemail."', '".$xusername."', '".$xpassword."', 'user');");
+
+		}
 	}
 
 ?>

@@ -4,6 +4,9 @@
 	<title>Register Percobaan</title>
 </head>
 <body>
+	<?php 
+		if ($register == ""){
+	?>
 	<form action="<?php echo base_url()."register_sementara"; ?>" method="post">
 		<?php
 			echo $error3; 
@@ -28,5 +31,13 @@
 		Password: <input type="password" name="password"><br><br>
 		<input type="submit" name="submit"><br>
 	</form>
+	<?php
+		}else {
+			echo $register;
+	?>
+		<button onclick="location.href='<?php echo base_url()."login_sementara"; ?>'">Login</button>
+	<?php
+		}
+	?>
 </body>
 </html>

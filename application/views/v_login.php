@@ -1,25 +1,57 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>	
-</head>
-<body>
-	<h1>Silakan Login</h1>
-	<form action="login.php" method="post">		
-		<table>
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="username"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="login" value="Log In"></td>
-			</tr>
-		</table>
-	</form>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Login</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="col-md-1 image">
+        <img src="assets/img/Picture1.png" style=width:300px;height:300px;">
+    </div>
+    <div class="col-md-4 col-md-offset-3 form-login">
+    
+    <?php
+    /* handle error */
+    if (isset($_GET['error'])) : ?>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Warning!</strong> <?=base64_decode($_GET['error']);?>
+        </div>
+    <?php endif;?>
+
+        <div class="outter-form-login">
+        <div class="logo-login">
+            <br>
+        </div>
+            <form action="check-login.php" class="inner-login" method="post">
+            <h2 class="text-center title-login">User Login</h2>
+            <br>
+            	<center><b>Username</b></center>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+            	<center><b>Password</b></center>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <br>
+                <input type="submit" class="btn btn-block btn-custom-green" value="Login" />
+                
+                <div class="text-center forget">
+                    <p><br><br></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
 </html>

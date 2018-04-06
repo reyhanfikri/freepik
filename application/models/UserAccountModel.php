@@ -11,7 +11,7 @@
 			
 		}
 
-		public function loginDataValidation($xusername, $xpassword){
+		public function login($xusername, $xpassword){
 
 			$query = $this->db->query("SELECT * FROM t_user_account WHERE username = '".$xusername."' LIMIT 1;");
 
@@ -37,17 +37,17 @@
 
 		}
 
-		public function login($xusername){
+		public function getUserData($xusername){
 
 			$query = $this->db->query("SELECT * FROM t_user_account WHERE username = '".$xusername."' LIMIT 1;");
 
-			return $query->result_array();
+			return $query->row();
 
 		}
 
 		public function setCookie($xusername){
 
-       		set_cookie('user', $xusername, 60);
+       		set_cookie('user', $xusername, 60 * 60 * 24);
 
 		}
 

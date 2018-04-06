@@ -5,7 +5,6 @@ class Account extends CI_Controller {
 
 	public function index()
 	{
-		$this->login();
 	}
 
 	public function login()
@@ -31,7 +30,9 @@ class Account extends CI_Controller {
 	public function login_sementara()
 	{
 
-		if ($this->UserAccountModel->getCookie() == null){
+		$cookie = $this->UserAccountModel->getCookie();
+
+		if ($cookie == null){
 
 			if ($this->input->post('submit') !== null){
 
@@ -60,7 +61,7 @@ class Account extends CI_Controller {
 
 				}else{
 
-					$validation = $this->UserAccountModel->loginDataValidation($username, $password);
+					$validation = $this->UserAccountModel->login($username, $password);
 
 					if ($validation == "Username tidak ditemukan"
 						|| $validation == "Password tidak benar"){
@@ -73,7 +74,18 @@ class Account extends CI_Controller {
 					}else {
 
 						$this->UserAccountModel->setCookie($username);
-						redirect(base_url());
+
+						$user_data = $this->UserAccountModel->getUserData($cookie);
+
+						if ($user_data->role == "user"){
+
+							redirect(base_url());
+
+						}else {
+
+							redirect(base_url()."admin");
+
+						}
 
 					}
 
@@ -90,7 +102,17 @@ class Account extends CI_Controller {
 
 		}else{
 
-			redirect(base_url());
+			$user_data = $this->UserAccountModel->getUserData($cookie);
+
+			if ($user_data->role == "user"){
+
+				redirect(base_url());
+
+			}else {
+
+				redirect(base_url()."admin");
+
+			}
 
 		}
 

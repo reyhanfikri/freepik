@@ -16,10 +16,16 @@ class Home extends CI_Controller {
 
 				redirect(base_url()."admin");
 
+			}else {
+
+				$this->load->view('v_home');
+
 			}
 
-		}
+		}else {
 
-		$this->load->view('v_home');
+			$this->load->view('v_home');
+
+		}
 	}
 }

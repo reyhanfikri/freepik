@@ -16,10 +16,16 @@ class Admin extends CI_Controller {
 
 				redirect(base_url());
 
+			}else{
+
+				$this->load->view('v_admin');
+				
 			}
 
-		}
+		}else{
 
-		$this->load->view('v_admin');
+			redirect(base_url());
+
+		}
 	}
 }

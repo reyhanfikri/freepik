@@ -224,7 +224,7 @@ class Account extends CI_Controller {
 		
 	}
 
-	public function login_sementara()
+	/*public function login_sementara()
 	{
 
 		$cookie = $this->UserAccountModel->getCookie();
@@ -409,5 +409,5 @@ class Account extends CI_Controller {
 			$this->load->view('v_register_sementara', $data);
 
 		}
-	}
+	}*/
 }

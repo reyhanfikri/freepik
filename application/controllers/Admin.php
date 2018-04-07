@@ -1,8 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+* Class untuk laman admin
+*/
 class Admin extends CI_Controller {
 
+	/**
+	* Metode default
+	* URL : http://localhost/freepik/admin
+	*/
 	public function index()
 	{
 

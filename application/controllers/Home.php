@@ -1,8 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+* Class untuk laman home
+*/
 class Home extends CI_Controller {
 
+	/**
+	* Metode default
+	* URL : http://localhost/freepik/home
+	*/
 	public function index()
 	{
 

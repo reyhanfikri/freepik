@@ -14,7 +14,7 @@
       	<div class="col-md-5" style="padding-left: 130px; padding-top: 180px; padding-bottom: 170px">
             <img src="assets/img/WebsiteLogo.png" style=width:380px;height:250px;">
         </div>
-        <div class="col-md-5" style="padding-left: 150px; padding-top: 10px;">
+        <div class="col-md-5" style="padding-left: 150px; padding-top: <?php echo $paddingtop; ?>px;">
             <div class="outter-form-login" style="width:420px">
             <div class="logo-login">
             </div>
@@ -33,14 +33,6 @@
                     if ($register == ""){
                 ?>
                 <form action="<?php echo base_url()."register"; ?>" method="post">
-                    <center><b>Nama</b></center>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="nama" placeholder="Nama">
-                    </div>
-                    <center><b>Usia</b></center>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="usia" placeholder="Usia">
-                    </div>
                     <center><b>Email</b></center>
                     <div class="form-group">
                         <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $email; ?>">

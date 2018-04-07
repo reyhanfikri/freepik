@@ -1,12 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+* Class untuk manajemen akun
+*/
 class Account extends CI_Controller {
 
+	/**
+	* Metode default
+	* URL : http://localhost/freepik/account
+	* TIDAK TERPAKAI
+	*/
 	public function index()
 	{
 	}
 
+	/**
+	* Metode untuk proses login
+	* URL : http://localhost/freepik/login
+	*/
 	public function login()
 	{
 		$cookie = $this->UserAccountModel->getCookie();
@@ -96,6 +108,11 @@ class Account extends CI_Controller {
 		}
 	}
 
+	/**
+	* Metode untuk proses logout
+	* URL : http://localhost/freepik/logout
+	* HANYA PROSES TANPA VIEW
+	*/
 	public function logout()
 	{
 		if ($this->UserAccountModel->getCookie() !== null){
@@ -106,6 +123,10 @@ class Account extends CI_Controller {
 		redirect(base_url()."login");
 	}
 
+	/**
+	* Metode untuk proses register
+	* URL : http://localhost/freepik/register
+	*/
 	public function register()
 	{
 		$cookie = $this->UserAccountModel->getCookie();

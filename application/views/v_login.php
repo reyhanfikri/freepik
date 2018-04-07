@@ -19,7 +19,7 @@
             <div class="logo-login">
             </div>
                 <form action="<?php echo base_url()."login"; ?>" class="inner-login" method="post">
-                <h2 class="text-center title-login">User Login</h2>
+                <h2 class="text-center title-login">Login</h2>
                 <?php
                     if ($error != ""){ ?>
                         <div class="alert alert-warning alert-dismissible" role="alert">

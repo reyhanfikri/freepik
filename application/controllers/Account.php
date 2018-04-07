@@ -16,7 +16,7 @@ class Account extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk proses login
+	* Metode untuk login
 	* URL : http://localhost/freepik/login
 	*/
 	public function login()
@@ -124,7 +124,7 @@ class Account extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk proses register
+	* Metode untuk register
 	* URL : http://localhost/freepik/register
 	*/
 	public function register()

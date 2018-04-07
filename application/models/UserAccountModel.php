@@ -15,7 +15,7 @@
 		}
 
 		/**
-		* Metode untuk proses login
+		* Metode untuk proses login (Untuk user dan admin)
 		* Menerima input berupa string username dan string password
 		* Mengeluarkan output berupa string kalimat
 		*/

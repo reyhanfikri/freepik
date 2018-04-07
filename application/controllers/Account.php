@@ -16,7 +16,7 @@ class Account extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk login
+	* Metode untuk login user dan login admin
 	* URL : http://localhost/freepik/login
 	*/
 	public function login()
@@ -72,10 +72,16 @@ class Account extends CI_Controller {
 						$user_data = $this->UserAccountModel->getUserData($cookie);
 
 						if ($user_data->role == "user"){
+							/*
+							* Jika user adalah user biasa
+							*/
 
 							redirect(base_url());
 
 						}else {
+							/*
+							* Jika user adalah user admin
+							*/
 
 							redirect(base_url()."admin");
 
@@ -96,10 +102,16 @@ class Account extends CI_Controller {
 			$user_data = $this->UserAccountModel->getUserData($cookie);
 
 			if ($user_data->role == "user"){
+				/*
+				* Jika user adalah user biasa
+				*/
 
 				redirect(base_url());
 
 			}else {
+				/*
+				* Jika user adalah user admin
+				*/
 
 				redirect(base_url()."admin");
 
@@ -232,10 +244,16 @@ class Account extends CI_Controller {
 			$user_data = $this->UserAccountModel->getUserData($cookie);
 
 			if ($user_data->role == "user"){
+				/*
+				* Jika user adalah user biasa
+				*/
 
 				redirect(base_url());
 
 			}else {
+				/*
+				* Jika user adalah user admin
+				*/
 
 				redirect(base_url()."admin");
 

@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Login</title>
+    <title>FreePicture - LOGIN</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      	<div class="col-md-5" style="padding-left: 160px; padding-top: 165px; padding-bottom: 165px">
-            <img src="assets/img/Picture1.png" style=width:300px;height:300px;">
+      	<div class="col-md-5" style="padding-left: 130px; padding-top: 180px; padding-bottom: 170px">
+            <img src="assets/img/WebsiteLogo.png" style=width:380px;height:250px;">
         </div>
         <div class="col-md-5 form-login" style="padding-left: 150px;">
         

@@ -11,10 +11,10 @@
   </head>
   <body>
     <div class="container">
-      	<div class="col-md-5" style="padding-left: 140px; padding-top: 165px; padding-bottom: 165px">
+      	<div class="col-md-5" style="padding-left: 150px; padding-top: 165px; padding-bottom: 165px">
             <img src="assets/img/Picture1.png" style=width:300px;height:300px;">
         </div>
-        <div class="col-md-5 form-login" style="padding-left: 140px;">
+        <div class="col-md-5 form-login" style="padding-left: 150px;">
         
         <?php
         /* handle error */

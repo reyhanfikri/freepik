@@ -79,6 +79,10 @@
 
 			$query = $this->db->query("INSERT INTO t_user_account VALUES (null, '".$xemail."', '".$xusername."', '".$xpassword."', 'user');");
 
+			$user_data = $this->getUserData($xusername);
+
+			$query = $this->db->query("INSERT INTO t_user_profile VALUES (null, ".$user_data->id.", null, null, null);");
+
 		}
 	}
 

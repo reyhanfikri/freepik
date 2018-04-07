@@ -25,13 +25,13 @@
 
 				}else{
 
-					return "Password tidak benar";
+					return "Perhatian! Password tidak benar";
 
 				}
 
 			} else {
 
-				return "Username tidak ditemukan";
+				return "Perhatian! Username tidak ditemukan";
 
 			}
 

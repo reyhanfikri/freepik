@@ -9,7 +9,91 @@ class Account extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('v_login');
+		$cookie = $this->UserAccountModel->getCookie();
+
+		if ($cookie == null){
+
+			$data['error'] = "";
+			$data['username'] = "";
+			$data['paddingtop'] = 100;
+
+			if ($this->input->post('submit') !== null){
+
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+
+				if ($username == "" && $password == ""){
+
+					$data['error'] = "Perhatian! Username dan Password belum diisi.";
+					$data['paddingtop'] = 70;
+					$this->load->view('v_login', $data);
+
+				}else if ($username == ""){
+
+					$data['error'] = "Perhatian! Username belum diisi.";
+					$data['paddingtop'] = 70;
+					$this->load->view('v_login', $data);
+
+				}else if ($password == ""){
+
+					$data['error'] = "Perhatian! Password belum diisi.";
+					$data['paddingtop'] = 70;
+					$data['username'] = $username;
+					$this->load->view('v_login', $data);
+
+				}else{
+
+					$validation = $this->UserAccountModel->login($username, $password);
+
+					if ($validation == "Perhatian! Username tidak ditemukan"
+						|| $validation == "Perhatian! Password tidak benar"){
+
+						$data['error'] = $validation;
+						$data['paddingtop'] = 70;
+						$data['username'] = $username;
+						$this->load->view('v_login', $data);
+
+					}else {
+
+						$this->UserAccountModel->setCookie($username);
+
+						$user_data = $this->UserAccountModel->getUserData($cookie);
+
+						if ($user_data->role == "user"){
+
+							redirect(base_url());
+
+						}else {
+
+							redirect(base_url()."admin");
+
+						}
+
+					}
+
+				}
+
+			}else{
+
+				$this->load->view('v_login', $data);
+
+			}	
+
+		}else{
+
+			$user_data = $this->UserAccountModel->getUserData($cookie);
+
+			if ($user_data->role == "user"){
+
+				redirect(base_url());
+
+			}else {
+
+				redirect(base_url()."admin");
+
+			}
+
+		}
 	}
 
 	public function logout()
@@ -19,12 +103,33 @@ class Account extends CI_Controller {
 			delete_cookie('user');
 
 		}
-		redirect(base_url()."login_sementara");
+		redirect(base_url()."login");
 	}
 
 	public function register()
 	{
-		$this->load->view('v_register');
+		$cookie = $this->UserAccountModel->getCookie();
+
+		if ($cookie == null){
+
+			$this->load->view('v_register');
+
+		}else {
+
+			$user_data = $this->UserAccountModel->getUserData($cookie);
+
+			if ($user_data->role == "user"){
+
+				redirect(base_url());
+
+			}else {
+
+				redirect(base_url()."admin");
+
+			}
+			
+		}
+		
 	}
 
 	public function login_sementara()

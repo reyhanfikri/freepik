@@ -14,35 +14,32 @@
       	<div class="col-md-5" style="padding-left: 130px; padding-top: 180px; padding-bottom: 170px">
             <img src="assets/img/WebsiteLogo.png" style=width:380px;height:250px;">
         </div>
-        <div class="col-md-5 form-login" style="padding-left: 150px;">
-        
-        <?php
-        /* handle error */
-        if (isset($_GET['error'])) : ?>
-            <div class="alert alert-warning alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <strong>Warning!</strong> <?=base64_decode($_GET['error']);?>
-            </div>
-        <?php endif;?>
-
+        <div class="col-md-5" style="padding-left: 150px; padding-top: <?php echo $paddingtop; ?>px">
             <div class="outter-form-login">
             <div class="logo-login">
             </div>
-                <form action="check-login.php" class="inner-login" method="post">
+                <form action="<?php echo base_url()."login"; ?>" class="inner-login" method="post">
                 <h2 class="text-center title-login">User Login</h2>
+                <?php
+                    if ($error != ""){ ?>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                        <?php
+                            echo $error; 
+                            echo "<br>";
+                        ?>
+                        </div>
+                <?php } ?>
                 <br>
                 	<center><b>Username</b></center>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $username; ?>">
                     </div>
                 	<center><b>Password</b></center>
                     <div class="form-group">
                         <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <br>
-                    <input type="submit" class="btn btn-block btn-custom-green" value="Login" />
+                    <input type="submit" name="submit" class="btn btn-block btn-custom-green" value="Login" />
                 </form>
             </div>
         </div>

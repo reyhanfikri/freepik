@@ -15,10 +15,10 @@
             <img src="assets/img/WebsiteLogo.png" style=width:380px;height:250px;">
         </div>
         <div class="col-md-5" style="padding-left: 150px; padding-top: <?php echo $paddingtop; ?>px">
-            <div class="outter-form-login">
+            <div class="outter-form-login" style="width:420px">
             <div class="logo-login">
             </div>
-                <form action="<?php echo base_url()."login"; ?>" class="inner-login" method="post">
+                <form action="<?php echo base_url()."login"; ?>" method="post">
                 <h2 class="text-center title-login">Login</h2>
                 <?php
                     if ($error != ""){ ?>
@@ -40,6 +40,7 @@
                     </div>
                     <br>
                     <input type="submit" name="submit" class="btn btn-block btn-custom-green" value="Login" />
+                    <br><center><a href="<?php echo base_url()."register"; ?>">Belum mendaftar? Register</a></center>
                 </form>
             </div>
         </div>

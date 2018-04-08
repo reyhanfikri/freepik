@@ -21,7 +21,7 @@
                 <h2 class="text-center title-login">Register</h2>
                 <?php
                     if ($error != ""){ ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-warning" role="alert">
                         <?php
                             echo $error; 
                             echo "<br>";

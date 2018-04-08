@@ -4,6 +4,6 @@
 	<title>Home</title>
 </head>
 <body>
-	<button onclick="location.href='<?php echo base_url()."logout"; ?>'">Logout</button>
+	<button onclick="location.href='<?php echo site_url('logout'); ?>'">Logout</button>
 </body>
 </html>

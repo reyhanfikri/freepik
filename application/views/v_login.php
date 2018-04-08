@@ -18,7 +18,7 @@
             <div class="outter-form-login" style="width:420px">
             <div class="logo-login">
             </div>
-                <form action="<?php echo base_url()."login"; ?>" method="post">
+                <form action="<?php echo site_url('login'); ?>" method="post">
                 <h2 class="text-center title-login">Login</h2>
                 <?php
                     if ($error != ""){ ?>
@@ -40,7 +40,7 @@
                     </div>
                     <br>
                     <input type="submit" name="submit" class="btn btn-block btn-custom-green" value="Login" />
-                    <br><center><a href="<?php echo base_url()."register"; ?>">Belum mendaftar? Register</a></center>
+                    <br><center><a href="<?php echo site_url('register'); ?>">Belum mendaftar? Register</a></center>
                 </form>
             </div>
         </div>

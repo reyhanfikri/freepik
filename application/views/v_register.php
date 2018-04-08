@@ -32,7 +32,7 @@
                 <?php 
                     if ($register == ""){
                 ?>
-                <form action="<?php echo base_url()."register"; ?>" method="post">
+                <form action="<?php echo site_url('register'); ?>" method="post">
                     <center><b>Email</b></center>
                     <div class="form-group">
                         <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $email; ?>">
@@ -47,7 +47,7 @@
                     </div>
                     <br>
                     <input type="submit" name="submit" class="btn btn-block btn-custom-green" value="Register" />
-                    <br><center><a href="<?php echo base_url()."login"; ?>">Sudah mendaftar? Login</a></center>
+                    <br><center><a href="<?php echo site_url('login'); ?>">Sudah mendaftar? Login</a></center>
                 </form>
                 <?php
                     }else { ?>
@@ -56,7 +56,7 @@
                         echo "<center><b>".$register."</b></center>";
                         ?>
                         </div>
-                    <br><center><b><button onclick="location.href='<?php echo base_url()."login"; ?>'" class="btn btn-block btn-primary">Login</button></b></center><br><br><br><br><br><br><br>
+                    <br><center><b><button onclick="location.href='<?php echo site_url('login'); ?>'" class="btn btn-block btn-primary">Login</button></b></center><br><br><br><br><br><br><br>
                 <?php
                     }
                 ?>

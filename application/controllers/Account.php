@@ -76,14 +76,14 @@ class Account extends CI_Controller {
 							* Jika user adalah user biasa
 							*/
 
-							redirect(base_url());
+							redirect(site_url());
 
 						}else {
 							/*
 							* Jika user adalah user admin
 							*/
 
-							redirect(base_url()."admin");
+							redirect(site_url('admin'));
 
 						}
 
@@ -106,14 +106,14 @@ class Account extends CI_Controller {
 				* Jika user adalah user biasa
 				*/
 
-				redirect(base_url());
+				redirect(site_url());
 
 			}else {
 				/*
 				* Jika user adalah user admin
 				*/
 
-				redirect(base_url()."admin");
+				redirect(site_url('admin'));
 
 			}
 
@@ -132,7 +132,7 @@ class Account extends CI_Controller {
 			delete_cookie('user');
 
 		}
-		redirect(base_url()."login");
+		redirect(site_url('login'));
 	}
 
 	/**
@@ -248,14 +248,14 @@ class Account extends CI_Controller {
 				* Jika user adalah user biasa
 				*/
 
-				redirect(base_url());
+				redirect(site_url());
 
 			}else {
 				/*
 				* Jika user adalah user admin
 				*/
 
-				redirect(base_url()."admin");
+				redirect(site_url('admin'));
 
 			}
 

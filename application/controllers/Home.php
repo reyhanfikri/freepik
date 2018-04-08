@@ -21,7 +21,7 @@ class Home extends CI_Controller {
 
 			if ($user_data->role == "admin"){
 
-				redirect(base_url()."admin");
+				redirect(site_url('admin'));
 
 			}else {
 

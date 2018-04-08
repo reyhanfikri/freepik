@@ -21,7 +21,7 @@ class Admin extends CI_Controller {
 
 			if ($user_data->role == "user"){
 
-				redirect(base_url());
+				redirect(site_url());
 
 			}else{
 
@@ -31,7 +31,7 @@ class Admin extends CI_Controller {
 
 		}else{
 
-			redirect(base_url());
+			redirect(site_url());
 
 		}
 	}

@@ -35,4 +35,10 @@ class Admin extends CI_Controller {
 
 		}
 	}
+
+	public function admin_sementara(){
+
+		$this->load->view('v_admin_sementara');
+
+	}
 }

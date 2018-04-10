@@ -10,10 +10,10 @@
     <link href="<?php echo site_url('assets/css/bootswatch/style.css') ?>" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light navcolor">
+	<nav class="navbar navbar-expand-lg navbar-light navcolor" style="height: 60px;">
 	  <div class="container">
 		  <a class="navbar-brand" href="<?php echo site_url('admin') ?>"><img height="40px" width="40px" src="<?php echo site_url('assets/img/WebsiteLogo2.png') ?>"></a>
-		  <a class="navbar-brand" href="<?php echo site_url('admin') ?>">FreePicture - Admin</a>
+		  <a class="navbar-brand" style="color: white; " href="<?php echo site_url('admin') ?>">FreePicture - Admin</a>
 
 		  <div class="collapse navbar-collapse" id="navbarColor01">
 		    <ul class="navbar-nav mr-auto">
@@ -22,5 +22,6 @@
 		  </div>
 	  </div>
 	</nav>
+	
 </body>
 </html>

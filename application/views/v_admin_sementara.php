@@ -22,6 +22,28 @@
 		  </div>
 	  </div>
 	</nav>
-	
+	<div class="container">
+		<h2>Data User</h2>
+		<table class="table table-hover">
+			<thead>
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Username</th>
+		      <th scope="col">Action</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<?php foreach ($data as $key) { ?>
+		  	  <tr>
+		  	  	<td><?php echo $key['id']; ?></td>
+		  	  	<td><?php echo $key['email']; ?></td>
+		  	  	<td><?php echo $key['username']; ?></td>
+		  	  	<td><a href="<?php echo site_url('admin/hapus_user'); ?>" class="btn btn-danger">HAPUS USER</a></td>
+		  	  </tr>	
+		  	<?php } ?>
+		  </tbody>
+		</table>
+	</div>
 </body>
 </html>

@@ -72,6 +72,19 @@
 		}
 
 		/**
+		* Metode untuk mendapatkan seluruh data user pada table t_user_account kecuali data admin
+		* Tidak menerima input
+		* Mengeluarkan output berupa array
+		*/
+		public function getAllUserData(){
+
+			$query = $this->db->query("SELECT id, email, username FROM t_user_account WHERE role = 'user';");
+
+			return $query->result_array();
+
+		}
+
+		/**
 		* Metode untuk mengeset cookie pada saat user login
 		* Menerima input berupa string username
 		* Tidak mengeluarkan output
@@ -115,6 +128,19 @@
 			$user_data = $this->getUserData($xusername);
 
 			$query = $this->db->query("INSERT INTO t_user_profile VALUES (null, ".$user_data->id.", null, null, null);");
+
+		}
+
+		/**
+		* Metode untuk menghapus data user pada tabel t_user_account dan t_user_profil
+		* Menerima input berupa integer id
+		* Tidak mengeluarkan output
+		*/
+		public function deleteData($xid){
+
+			$query = $this->db->query("DELETE FROM t_user_profile WHERE id_user = ".$xid.";");
+
+			$query = $this->db->query("DELETE FROM t_user_account WHERE id = ".$xid.";");
 
 		}
 	}

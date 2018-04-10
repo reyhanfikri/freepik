@@ -25,7 +25,9 @@ class Admin extends CI_Controller {
 
 			}else{
 
-				$this->load->view('v_admin');
+				$data['data'] = $this->UserAccountModel->getAllUserData();
+
+				$this->load->view('v_admin', $data);
 				
 			}
 
@@ -36,9 +38,11 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function admin_sementara(){
+	public function hapus_user($id) {
 
-		$this->load->view('v_admin_sementara');
+		$this->UserAccountModel->deleteData($id);
+
+		redirect('admin');
 
 	}
 }

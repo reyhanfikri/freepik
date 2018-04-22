@@ -42,7 +42,7 @@
     <div class="row" style="padding-top: 10px; padding-center: 120px;"> 
 	
 	  <div class="column">
-	    <img href="www.google.com" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
+	    <a href="<?php echo site_url('highlight'); ?>"><img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg"></a>
 	  </div>
 	  
 	  <div class="column">

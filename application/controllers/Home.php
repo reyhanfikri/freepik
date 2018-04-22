@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 
 	/**
 	* Metode default
-	* URL : http://localhost/freepik/home
+	* URL : http://localhost/freepik
 	*/
 	public function index()
 	{
@@ -34,5 +34,16 @@ class Home extends CI_Controller {
 			$this->load->view('v_home');
 
 		}
+	}
+
+	/**
+	* Metode default
+	* URL : http://localhost/freepik/highlight
+	*/
+	public function highlight()
+	{
+
+		$this->load->view('v_highlight');
+
 	}
 }

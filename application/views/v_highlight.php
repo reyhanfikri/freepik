@@ -37,61 +37,18 @@
 		  </div>
 	  </div>
 	</nav>
-	<br>
-	<br>
-    <div class="row" style="padding-top: 10px; padding-center: 120px;"> 
-	
-	  <div class="column">
-	    <img href="www.google.com" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
+    <div class="row"> 
 	  <div class="column">
 	    <img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div> 
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
+	  <div class="column" style="padding-top: 10px;">
+	    <a href="#" class="previous">&laquo; Previous</a>
 	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <br>
-	  <br>
-	  <p>
-	  <p>
-
-	  <div class="column" style="padding-top: 10px; padding-right: 170px; padding-bottom: 50px;">
-	    <a href="#" class="previous" align="left">&laquo; Previous</a>
-	  </div>
-	  
 	  <div class="col-md-6"> </div>
-	  
 	  <div class="column" style="padding-top: 10px; padding-left: 170px; padding-bottom: 50px;">
-	    <a href="#" class="next" align="right">Next &nbsp &raquo;</a>
+	    <a href="#" class="next">Next &nbsp &raquo;</a>
 	  </div>
-	  
 	</div>
-	
 	<div class="footer">
-	
         <ul>
         <li style="color:#4286f4">
             <a style="color: white;" href="#">About</a>

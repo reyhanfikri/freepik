@@ -9,7 +9,12 @@
     <link href="<?php echo site_url('assets/css/bootswatch/style.css') ?>" rel="stylesheet">
     <link href="assets/css/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+</head
+
+<style>
+
+</style>
+
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light navcolor" style="height: 50px;">
 	  <div class="container">
@@ -37,17 +42,86 @@
 		  </div>
 	  </div>
 	</nav>
-    <div class="row"> 
-	  <div class="column">
-	    <img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  <div class="column" style="padding-top: 10px;">
-	    <a href="#" class="previous">&laquo; Previous</a>
+	
+	<br>
+	<br>
+	
+	  <div class="col-sm-6">
+	    <a href="#" class="previous">&laquo; Back</a>
 	  </div>
-	  <div class="col-md-6"> </div>
-	  <div class="column" style="padding-top: 10px; padding-left: 170px; padding-bottom: 50px;">
-	    <a href="#" class="next">Next &nbsp &raquo;</a>
-	  </div>
+	  
+	 <br>
+	
+    <div class="row grid-container" style="padding-left : 100px"> 
+	
+		<div class="col-sm-6">
+	  
+			<img style="width:690px;height:690px;" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
+		
+		</div>
+	  
+		<div class="col-sm-6">
+	  
+			<a style="color: black; padding-center:80px" align="center" href="#" >
+	  
+				<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
+			Username
+	  
+			</a>
+			
+			<br>
+
+			<div class="col-sm-6">
+		
+				Test
+		
+				<hr color="black">
+		
+			</div>
+		
+			<br>
+			
+			<div class="col-md-6">
+			
+			<b href="#">user_kece</b>   Apa komentarmu, boy ? <p>
+			<b href="#">user_kece1</b>  Mahasiswa... ?
+			
+			<hr color="black">
+		
+			<a href="#" >
+		
+				<img src="https://image.flaticon.com/icons/png/512/66/66845.png" alt="Like" style="width:40px;">
+			
+			</a>
+		
+			<a href="#" >
+		
+				<img src="http://pngimages.net/sites/default/files/comment-png-image-68678.png" alt="Comment" style="width:40px;">
+		
+			</a>
+		
+			<br>
+			
+				<p align="right">### Views</p>
+			
+			<br>
+		
+			<form action="/action_page.php">
+		
+				<input style="color: black" type="text" name="firstname" value="komentar">
+		
+			</form>
+			
+			</div>
+		
+		</div>
+	  
+	  <br>
+	  
 	</div>
+	
+	<br>
+	
 	<div class="footer">
         <ul>
         <li style="color:#4286f4">

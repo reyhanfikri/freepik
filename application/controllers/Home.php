@@ -7,19 +7,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 
 	/**
+	* Metode konstruktor
+	*/
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model(array('UserModel', 'CookieModel'));
+	}
+
+	/**
 	* Metode default
 	* URL : http://localhost/freepik
 	*/
 	public function index()
 	{
 
-		$cookie = $this->UserAccountModel->getCookie();
+		$cookie = $this->CookieModel->getCookie();
 
 		if ($cookie !== null){
 
-			$user_data = $this->UserAccountModel->getUserData($cookie);
+			$user_data = $this->UserModel->getUserData($cookie);
 
-			if ($user_data->role == "admin"){
+			if ($user_data->id_role == 2){
 
 				redirect(site_url('admin'));
 

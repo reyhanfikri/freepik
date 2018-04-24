@@ -7,6 +7,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Account extends CI_Controller {
 
 	/**
+	* Metode konstruktor
+	*/
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model(array('UserModel', 'AccountModel', 'CookieModel'));
+	}
+
+	/**
 	* Metode default
 	* URL : http://localhost/freepik/account
 	* TIDAK TERPAKAI
@@ -21,7 +30,7 @@ class Account extends CI_Controller {
 	*/
 	public function login()
 	{
-		$cookie = $this->UserAccountModel->getCookie();
+		$cookie = $this->CookieModel->getCookie();
 
 		if ($cookie == null){
 
@@ -55,7 +64,7 @@ class Account extends CI_Controller {
 
 				}else{
 
-					$validation = $this->UserAccountModel->login($username, $password);
+					$validation = $this->AccountModel->login($username, $password);
 
 					if ($validation == "Perhatian! Username tidak ditemukan"
 						|| $validation == "Perhatian! Password tidak benar"){
@@ -67,11 +76,11 @@ class Account extends CI_Controller {
 
 					}else {
 
-						$this->UserAccountModel->setCookie($username);
+						$this->CookieModel->setCookie($username);
 
-						$user_data = $this->UserAccountModel->getUserData($cookie);
+						$user_data = $this->UserModel->getUserData($cookie);
 
-						if ($user_data->role == "user"){
+						if ($user_data->id_role == 1){
 							/*
 							* Jika user adalah user biasa
 							*/
@@ -99,9 +108,9 @@ class Account extends CI_Controller {
 
 		}else{
 
-			$user_data = $this->UserAccountModel->getUserData($cookie);
+			$user_data = $this->UserModel->getUserData($cookie);
 
-			if ($user_data->role == "user"){
+			if ($user_data->id_role == 1){
 				/*
 				* Jika user adalah user biasa
 				*/
@@ -127,7 +136,7 @@ class Account extends CI_Controller {
 	*/
 	public function logout()
 	{
-		if ($this->UserAccountModel->getCookie() !== null){
+		if ($this->CookieModel->getCookie() !== null){
 
 			delete_cookie('user');
 
@@ -141,7 +150,7 @@ class Account extends CI_Controller {
 	*/
 	public function register()
 	{
-		$cookie = $this->UserAccountModel->getCookie();
+		$cookie = $this->CookieModel->getCookie();
 
 		if ($cookie == null){
 
@@ -207,11 +216,11 @@ class Account extends CI_Controller {
 
 				}else{
 
-					if ($this->UserAccountModel->getUserData($username) == null){
+					if ($this->UserModel->getUserData($username) == null){
 
-						if ($this->UserAccountModel->getUserDatabyEmail($email) == null){
+						if ($this->UserModel->getUserDatabyEmail($email) == null){
 
-							$this->UserAccountModel->insertData($email, $username, $password);
+							$this->UserModel->insertData($email, $username, $password);
 							$data['register'] = "Register sukses!";
 							$this->load->view('v_register', $data);
 
@@ -241,9 +250,9 @@ class Account extends CI_Controller {
 
 		}else {
 
-			$user_data = $this->UserAccountModel->getUserData($cookie);
+			$user_data = $this->UserModel->getUserData($cookie);
 
-			if ($user_data->role == "user"){
+			if ($user_data->id_role == 1){
 				/*
 				* Jika user adalah user biasa
 				*/

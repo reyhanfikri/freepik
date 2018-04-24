@@ -7,25 +7,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 
 	/**
+	* Metode konstruktor
+	*/
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model(array('UserModel', 'CookieModel'));
+	}
+
+	/**
 	* Metode default
 	* URL : http://localhost/freepik/admin
 	*/
 	public function index()
 	{
 
-		$cookie = $this->UserAccountModel->getCookie();
+		$cookie = $this->CookieModel->getCookie();
 
 		if ($cookie !== null){
 
-			$user_data = $this->UserAccountModel->getUserData($cookie);
+			$user_data = $this->UserModel->getUserData($cookie);
 
-			if ($user_data->role == "user"){
+			if ($user_data->id_role == 1){
 
 				redirect(site_url());
 
 			}else{
 
-				$data['data'] = $this->UserAccountModel->getAllUserData();
+				$data['data'] = $this->UserModel->getAllUserData();
 
 				$this->load->view('v_admin', $data);
 				
@@ -40,7 +49,7 @@ class Admin extends CI_Controller {
 
 	public function hapus_user($id) {
 
-		$this->UserAccountModel->deleteData($id);
+		$this->UserModel->deleteData($id);
 
 		redirect('admin');
 

@@ -46,7 +46,7 @@
 	<br>
 	<br>
 	
-	  <div class="col-sm-6">
+	  <div style="padding-left: 100px;">
 	    <a href="#" class="previous">&laquo; Back</a>
 	  </div>
 	  
@@ -56,7 +56,7 @@
 	
 		<div class="col-sm-6">
 	  
-			<img style="width:690px;height:690px;" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
+			<img style="width:550px;height:550px;" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
 		
 		</div>
 	  
@@ -107,11 +107,9 @@
 			<br>
 		
 			<form action="/action_page.php">
-		
-				<input style="color: black" type="text" name="firstname" value="komentar">
-		
+		        	<textarea name="komentar" placeholder="komentar" style="width: 275px; height:100px"></textarea>
+		        	<button type="submit" class="btn btn-default">Submit</button>
 			</form>
-			
 			</div>
 		
 		</div>

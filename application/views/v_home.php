@@ -43,7 +43,7 @@
 	
     	<?php foreach ($semua_gambar as $value) { ?>
     		<div class="column">
-			    <a href="<?php echo site_url('highlight'); ?>"><img src="<?php echo site_url('upload/'.$value->nama_file); ?>" width="200" height="200"></a>
+			    <a href="<?php echo site_url('highlight/'.$value->nama_file); ?>"><img src="<?php echo site_url('upload/'.$value->nama_file); ?>" width="200" height="200"></a>
 			</div>
 		<?php } ?>
 	  

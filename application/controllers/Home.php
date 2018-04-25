@@ -50,10 +50,10 @@ class Home extends CI_Controller {
 	* Metode default
 	* URL : http://localhost/freepik/highlight
 	*/
-	public function highlight()
+	public function highlight($nama_file)
 	{
-
-		$this->load->view('v_highlight');
+		$data['nama_file'] = $nama_file;
+		$this->load->view('v_highlight', $data);
 
 	}
 

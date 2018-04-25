@@ -56,7 +56,7 @@
 	
 		<div class="col-sm-6">
 	  
-			<img style="width:550px;height:550px;" src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
+			<img style="width:550px;height:550px;" src="<?php echo site_url('upload/'.$nama_file); ?>" width="200" height="200">">
 		
 		</div>
 	  

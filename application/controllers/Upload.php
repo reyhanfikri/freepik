@@ -16,7 +16,7 @@ class Upload extends CI_Controller {
 
 	public function index() {
 
-		/*$this->load->view('v_upload');*/
+		$this->load->view('v_upload');
 
 	}
 

@@ -54,12 +54,19 @@
 	  
 	</div>
 	<br>
-	<div align="center" style="padding-top: 10px; padding-bottom: 50px; align-items: center;">
-	  <a href="#" class="previous">&laquo; Previous</a>
-	  <span class="col-md-1"></span>
-	  <a href="#" class="next">Next &nbsp &raquo;</a>
+
+	<div class="row">
+		<div class="col-md-6" align="left">
+		  <a href="#" class="previous">&laquo; Previous</a>
+		</div>
+
+		<div class="col-md-5" align="right">
+		  <a href="#" class="next">Next &nbsp &raquo;</a>
+		</div>
 	</div>
-	
+	<br>
+	<br>
+	  
 	<div class="footer">
 	
         <ul>

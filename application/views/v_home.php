@@ -41,37 +41,11 @@
 	<br>
     <div class="row" style="padding-top: 10px; padding-center: 120px;"> 
 	
-	  <div class="column">
-	    <a href="<?php echo site_url('highlight'); ?>"><img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg"></a>
-	  </div>
-	  
-	  <div class="column">
-	    <img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div> 
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
-	  
-	  <div class="column">
-		<img src="https://image.freepik.com/free-vector/business-elements-infographic_1340-7302.jpg">
-	  </div>
+    	<?php foreach ($semua_gambar as $value) { ?>
+    		<div class="column">
+			    <a href="<?php echo site_url('highlight'); ?>"><img src="<?php echo site_url('upload/'.$value->nama_file); ?>" width="200" height="200"></a>
+			</div>
+		<?php } ?>
 	  
 	  <br>
 	  <br>

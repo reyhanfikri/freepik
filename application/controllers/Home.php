@@ -12,7 +12,8 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('UserModel', 'CookieModel'));
+		$this->load->helper(array('form'));
+		$this->load->model(array('UserModel', 'CookieModel', 'ModelGambar'));
 	}
 
 	/**
@@ -34,13 +35,13 @@ class Home extends CI_Controller {
 
 			}else {
 
-				$this->load->view('v_home');
+				$this->load->view('v_home', $this->loadAllGambar());
 
 			}
 
 		}else {
 
-			$this->load->view('v_home');
+			$this->load->view('v_home', $this->loadAllGambar());
 
 		}
 	}
@@ -53,6 +54,14 @@ class Home extends CI_Controller {
 	{
 
 		$this->load->view('v_highlight');
+
+	}
+
+	public function loadAllGambar() {
+
+		$data['semua_gambar'] = $this->ModelGambar->getAllGambar();
+
+		return $data;
 
 	}
 }

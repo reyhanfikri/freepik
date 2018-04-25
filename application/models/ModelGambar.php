@@ -28,6 +28,14 @@
 
 		}
 
+		public function getGambarbyNamaFile($nama_file) {
+
+			$q = $this->db->select('*')->from('t_gambar')->where('nama_file', $nama_file)->limit(1)->get();
+
+			return $q->row();
+
+		}
+
 	}
 
 ?>

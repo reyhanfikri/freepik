@@ -52,9 +52,8 @@ class Home extends CI_Controller {
 	*/
 	public function highlight($nama_file)
 	{
-		$data['nama_file'] = $nama_file;
+		$data['highlight'] = $this->ModelGambar->getGambarbyNamaFile($nama_file);
 		$this->load->view('v_highlight', $data);
-
 	}
 
 	public function loadAllGambar() {

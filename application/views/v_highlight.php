@@ -56,7 +56,7 @@
 	
 		<div class="col-sm-6">
 	  
-			<img style="width:550px;height:550px;" src="<?php echo site_url('upload/'.$nama_file); ?>" width="200" height="200">">
+			<img style="width:550px;height:550px;" src="<?php echo site_url('upload/'.$highlight->nama_file); ?>" width="200" height="200">">
 		
 		</div>
 	  
@@ -102,7 +102,7 @@
 		
 			<br>
 			
-				<p align="right">### Views</p>
+				<p align="right"><?php echo $highlight->jumlah_view; ?> Views</p>
 			
 			<br>
 		

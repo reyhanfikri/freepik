@@ -7,7 +7,7 @@
 	<title>Home</title>
 	<link href="<?php echo site_url('assets/css/bootswatch/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo site_url('assets/css/bootswatch/style.css') ?>" rel="stylesheet">
-    <link href="assets/css/style2.css" rel="stylesheet">
+    <link href="<?php echo site_url('assets/css/style2.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head
 
@@ -22,7 +22,7 @@
 		  <div class="topnav">
   			<div class="search-container">
     		  <form action="#">
-      		  <input style="width: 500px; height: 35px;" type="text" placeholder="Search" name="search">
+      		  <input style="width: 500px; height: 35px;" type="text" placeholder="&nbsp;&nbsp;&nbsp;Search" name="search">
       		  <button style ="width:40px; height: 35px;" type="submit"><i class="fa fa-search"></i></button>
     		  </form>
   			</div>

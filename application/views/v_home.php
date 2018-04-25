@@ -51,17 +51,13 @@
 	  <br>
 	  <p>
 	  <p>
-
-	  <div class="column" style="padding-top: 10px; padding-right: 170px; padding-bottom: 50px;">
-	    <a href="#" class="previous" align="left">&laquo; Previous</a>
-	  </div>
 	  
-	  <div class="col-md-6"> </div>
-	  
-	  <div class="column" style="padding-top: 10px; padding-left: 170px; padding-bottom: 50px;">
-	    <a href="#" class="next" align="right">Next &nbsp &raquo;</a>
-	  </div>
-	  
+	</div>
+	<br>
+	<div align="center" style="padding-top: 10px; padding-bottom: 50px; align-items: center;">
+	  <a href="#" class="previous">&laquo; Previous</a>
+	  <span class="col-md-1"></span>
+	  <a href="#" class="next">Next &nbsp &raquo;</a>
 	</div>
 	
 	<div class="footer">

@@ -33,7 +33,15 @@
 		  <div class="collapse navbar-collapse" id="navbarColor01">
 		    <ul class="navbar-nav mr-auto">
 		    </ul>
-		      <button style="width: 80px; height: 35px; font-size: 18px;" class="btn btn-default" onclick="location.href='<?php echo site_url('logout'); ?>'">Logout</button>
+		      <?php if ($this->CookieModel->getCookie() == null) { ?>
+
+		      	<button style="width: 80px; height: 35px; font-size: 18px;" class="btn btn-default" onclick="location.href='<?php echo site_url('login'); ?>'">Login</button>
+
+		      <?php	} else { ?>
+
+		      	<button style="width: 80px; height: 35px; font-size: 18px;" class="btn btn-default" onclick="location.href='<?php echo site_url('logout'); ?>'">Logout</button>
+
+		      <?php	} ?>
 		  </div>
 	  </div>
 	</nav>

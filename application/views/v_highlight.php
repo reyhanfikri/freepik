@@ -28,12 +28,26 @@
   			</div>
 		  </div>
 		  <div class="collapse navbar-collapse">
-		  	<div class="col-md-5"> </div>
-		  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url() ?>">Home</a>
-		  	<a href="#">
-		  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
-		  	</a>
-		  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Username</a>
+		  	<?php if ($this->CookieModel->getCookie() == null) { ?>
+
+		      	<div class="col-md-5"> </div>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url() ?>">Home</a>
+			  	<a href="#">
+			  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
+			  	</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Username</a>
+
+		    <?php } else { ?>
+
+		      	<div class="col-md-3"> </div>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url() ?>">Home</a>
+			  	<a href="#">
+			  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
+			  	</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Username</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Upload</a>
+
+		    <?php } ?>
 		  </div>
 		  <div class="collapse navbar-collapse" id="navbarColor01">
 		    <ul class="navbar-nav mr-auto">

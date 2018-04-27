@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
+	<title>FreePicture</title>
 	<link href="<?php echo site_url('assets/css/bootswatch/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo site_url('assets/css/bootswatch/style.css') ?>" rel="stylesheet">
     <link href="<?php echo site_url('assets/css/style2.css') ?>" rel="stylesheet">

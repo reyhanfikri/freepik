@@ -93,15 +93,6 @@
             <a style="color: white;" href="#">Contact</a>
         </li>
         <li style="color:#4286f4">
-            <a style="color: white;" href="#">Bla</a>
-        </li>
-        <li style="color:#4286f4">
-            <a style="color: white;" href="#">Bla</a>
-        </li>
-        <li style="color:#4286f4">
-            <a style="color: white;" href="#">Bla</a>
-        </li>
-        <li style="color:#4286f4">
             <a style="color: white;" href="#">Copyright ©2018 FreePicture</a>
         </li>
         </ul>

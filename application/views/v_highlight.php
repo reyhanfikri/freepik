@@ -35,7 +35,7 @@
 			  	<a href="#">
 			  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
 			  	</a>
-			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Username</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url('profil'); ?>">Username</a>
 
 		    <?php } else { ?>
 
@@ -44,8 +44,8 @@
 			  	<a href="#">
 			  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
 			  	</a>
-			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Username</a>
-			  	<a class="navbar-nav mr-auto" style="color: white; " href="#">Upload</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url('profil'); ?>">Username</a>
+			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url('upload_gambar'); ?>">Upload</a>
 
 		    <?php } ?>
 		  </div>

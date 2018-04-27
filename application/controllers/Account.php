@@ -141,7 +141,7 @@ class Account extends CI_Controller {
 			delete_cookie('user');
 
 		}
-		redirect(site_url('login'));
+		redirect(site_url());
 	}
 
 	/**

@@ -10,7 +10,7 @@ class Upload_Gambar extends CI_Controller {
 
 		parent::__construct();
 		$this->load->helper(array('form'));
-		$this->load->model(array('ModelGambar'));
+		$this->load->model(array('ModelGambar', 'CookieModel'));
 
 	}
 

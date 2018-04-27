@@ -63,4 +63,10 @@ class Home extends CI_Controller {
 		return $data;
 
 	}
+
+	public function profil() {
+
+		$this->load->view('v_profile');
+
+	}
 }

@@ -47,6 +47,9 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	/**
+	* Metode untuk menghapus user
+	*/
 	public function hapus_user($id) {
 
 		$this->UserModel->deleteData($id);

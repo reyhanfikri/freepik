@@ -131,8 +131,6 @@ class Account extends CI_Controller {
 
 	/**
 	* Metode untuk proses logout
-	* URL : http://localhost/freepik/logout
-	* HANYA PROSES TANPA VIEW
 	*/
 	public function logout()
 	{

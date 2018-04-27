@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk laman home
+* Class untuk laman gallery online
 */
 class Home extends CI_Controller {
 
@@ -47,7 +47,7 @@ class Home extends CI_Controller {
 	}
 
 	/**
-	* Metode default
+	* Metode untuk laman hasil gambar
 	* URL : http://localhost/freepik/highlight
 	*/
 	public function highlight($nama_file)
@@ -56,6 +56,9 @@ class Home extends CI_Controller {
 		$this->load->view('v_highlight', $data);
 	}
 
+	/**
+	* Metode untuk menampilkan gambar di beranda
+	*/
 	public function loadAllGambar() {
 
 		$data['semua_gambar'] = $this->ModelGambar->getAllGambar();
@@ -64,6 +67,9 @@ class Home extends CI_Controller {
 
 	}
 
+	/**
+	* Metode untuk laman profil
+	*/
 	public function profil() {
 
 		$this->load->view('v_profile');

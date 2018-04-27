@@ -6,6 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 class Upload_Gambar extends CI_Controller {
 
+	/**
+	* Metode konstruktor
+	*/
 	public function __construct() {
 
 		parent::__construct();
@@ -14,12 +17,19 @@ class Upload_Gambar extends CI_Controller {
 
 	}
 
+	/**
+	* Metode default
+	* URL : http://localhost/freepik/upload_gambar
+	*/
 	public function index() {
 
 		$this->load->view('v_upload');
 
 	}
 
+	/**
+	* Metode untuk proses upload gambar
+	*/
 	public function prosesUpload() {
 
 		$config['upload_path'] = "./upload/";

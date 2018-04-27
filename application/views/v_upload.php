@@ -75,12 +75,12 @@
    <br>
   
     <div class="container" style="padding-left: 200px;">
-    <form action="#" method="post" enctype="multipart/form-data">
-      <input type="file"  name="fileToUpload" id="fileToUpload" style="background-color: #4286f4; color:WHITE;"><br><br>
-      <br><div style="padding-left: 100px;">
-        <input type="submit" value="Upload" name="submit">
-      </div>
-    </form>
+      <?php echo form_open_multipart('upload_gambar/prosesUpload') ?>
+        <input type="file"  name="userfile" style="background-color: #4286f4; color:WHITE;"><br><br>
+        <br><div style="padding-left: 100px;">
+          <input type="submit" value="Upload" name="submit">
+        </div>
+      </form>
     </div>
     <br>
 

@@ -22,7 +22,7 @@ class Upload_Gambar extends CI_Controller {
 
 	public function prosesUpload() {
 
-		/*$config['upload_path'] = "./upload/";
+		$config['upload_path'] = "./upload/";
 		$config['allowed_types'] = "jpg|png";
 		$config['max_size'] = 10240;
 		$config['max_width'] = 20480;
@@ -34,18 +34,17 @@ class Upload_Gambar extends CI_Controller {
 		if ($this->upload->do_upload('userfile')) {
 
 			// Insert to DB
-			$data['nama'] = $this->upload->data('file_name');
-			$this->ModelUpload->insertToDB($data);
+			/*$data['nama'] = $this->upload->data('file_name');
+			$this->ModelUpload->insertToDB($data);*/
 
-			$data = ['upload_data' => $this->upload->data()];
-			$this->load->view('v_success', $data);
+			/*$data = ['upload_data' => $this->upload->data()];*/
+			redirect(site_url('upload_gambar'));
 
 		} else {
 
-			$error = ['error' => $this->upload->display_errors()];
-			$this->load->view('v_error', $error);
+			redirect(site_url());
 
-		}*/
+		}
 
 	}
 }

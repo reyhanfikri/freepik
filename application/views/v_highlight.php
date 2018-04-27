@@ -105,8 +105,8 @@
 			
 			<div class="col-md-6">
 			
-			<b href="#">user_kece</b>   Apa komentarmu, boy ? <p>
-			<b href="#">user_kece1</b>  Mahasiswa... ?
+			<b href="#">user_kece</b>   Apa komentarmu? <p>
+			<b href="#">user_kece1</b>  Bagus... ?
 			
 			<hr color="black">
 		

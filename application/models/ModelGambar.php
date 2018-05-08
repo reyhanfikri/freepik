@@ -36,6 +36,14 @@
 
 		}
 
+		public function iterateJumlahView($id, $jumlah_view) {
+
+			$jumlah_view++;
+
+			$q = $this->db->set('jumlah_view', $jumlah_view)->where('id_gambar', $id)->update('t_gambar');
+
+		}
+
 	}
 
 ?>

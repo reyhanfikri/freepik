@@ -41,6 +41,19 @@
 		}
 
 		/**
+		* Metode untuk mendapatkan data user pada table t_user berdasarkan id user
+		* Menerima input berupa string id
+		* Mengeluarkan output berupa objek
+		*/
+		public function getUserDatabyId($xid){
+
+			$query = $this->db->query("SELECT * FROM t_user WHERE id = '".$xid."' LIMIT 1;");
+
+			return $query->row();
+
+		}
+
+		/**
 		* Metode untuk mendapatkan seluruh data user pada table t_user kecuali data admin
 		* Tidak menerima input
 		* Mengeluarkan output berupa array

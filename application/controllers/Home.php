@@ -55,7 +55,9 @@ class Home extends CI_Controller {
 		$data['highlight'] = $this->ModelGambar->getGambarbyNamaFile($nama_file);
 		$this->ModelGambar->iterateJumlahView($data['highlight']->id_gambar, 
 			$data['highlight']->jumlah_view);
-		
+
+		$data['user'] = $this->UserModel->getUserDatabyId($data['highlight']->id_user);
+
 		$this->load->view('v_highlight', $data);
 	}
 

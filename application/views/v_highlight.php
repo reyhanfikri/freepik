@@ -84,18 +84,18 @@
 	  
 		<div class="col-sm-6">
 	  
-			<a style="color: black; padding-center:80px" align="center" href="#" >
+			<p style="color: black; padding-left: 10px;">
 	  
 				<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
-			Username
+			<?php echo $user->username; ?>
 	  
-			</a>
+			</p>
 			
 			<br>
 
 			<div class="col-sm-6">
 		
-				Test
+				<?php echo $highlight->nama_gambar; ?>
 		
 				<hr color="black">
 		

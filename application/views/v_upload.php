@@ -101,19 +101,10 @@
     </div>
     <br>
 
-  <div class="footer">
-        <ul>
-        <li style="color:#4286f4">
-            <a style="color: white;" href="#">About</a>
-        </li>
-        <li style="color:#4286f4">
-            <a style="color: white;" href="#">Contact</a>
-        </li>
-        <li style="color:#4286f4">
-            <a style="color: white;" href="#">Copyright ©2018 FreePicture</a>
-        </li>
-        </ul>
-             
-  </div>
+  <div style="padding-top: 316px;">
+      <div class="footer" style="height: 70px;"><br>
+            <center>Copyright ©2018 FreePicture</center> 
+    </div>
+    </div>
 </body>
 </html>

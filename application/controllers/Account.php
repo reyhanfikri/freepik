@@ -76,9 +76,9 @@ class Account extends CI_Controller {
 
 					}else {
 
-						$this->CookieModel->setCookie($username);
+						$user_data = $this->UserModel->getUserData($username);
 
-						$user_data = $this->UserModel->getUserData($cookie);
+						$this->CookieModel->setCookie($username, $user_data->id);
 
 						if ($user_data->id_role == 1){
 							/*
@@ -139,6 +139,13 @@ class Account extends CI_Controller {
 			delete_cookie('user');
 
 		}
+
+		if ($this->CookieModel->getIdCookie() !== null){
+
+			delete_cookie('id_user');
+
+		}
+		
 		redirect(site_url());
 	}
 

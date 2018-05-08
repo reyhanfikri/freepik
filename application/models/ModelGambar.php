@@ -16,7 +16,7 @@
 
 		public function insertFileGambar($data) {
 
-			/*$this->db->insert('t_upload_gambar', $data);*/
+			$this->db->insert('t_gambar', $data);
 
 		}
 

@@ -78,7 +78,7 @@
 	
 		<div class="col-sm-6">
 	  
-			<img style="width:550px;height:550px;" src="<?php echo site_url('upload/'.$highlight->nama_file); ?>" width="200" height="200">">
+			<img style="width:550px;height:550px;" src="<?php echo site_url('upload/'.$highlight->nama_file); ?>" width="200" height="200">
 		
 		</div>
 	  

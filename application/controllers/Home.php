@@ -65,7 +65,19 @@ class Home extends CI_Controller {
 			$data_comment['id_user'] = $this->CookieModel->getIdCookie();
 			$data_comment['comment'] = $this->input->post('komentar');
 
-			$this->CommentModel->insertCommentToDB($data_comment);
+			if ($data_comment['id_user'] !== null) {
+
+				if ($data_comment['comment'] != "") {
+
+					$this->CommentModel->insertCommentToDB($data_comment);
+
+				}
+
+			} else {
+
+				redirect(site_url('login'));
+
+			}
 
 		}
 

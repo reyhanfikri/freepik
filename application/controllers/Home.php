@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 
 				$data['semua_gambar'] = $this->loadAllGambar();
 
+				$this->load->view('v_header');
 				$this->load->view('v_home', $data);
 
 			}
@@ -45,6 +46,7 @@ class Home extends CI_Controller {
 
 			$data['semua_gambar'] = $this->loadAllGambar();
 
+			$this->load->view('v_header');
 			$this->load->view('v_home', $data);
 
 		}
@@ -57,9 +59,10 @@ class Home extends CI_Controller {
 	public function cari_gambar()
 	{
 		if ($this->input->get('search') !== null) {
-			
+
 				$data['semua_gambar'] = $this->searchGambar($this->input->get('search'));
 
+				$this->load->view('v_header');
 				$this->load->view('v_home', $data);
 
 		} else {
@@ -106,6 +109,7 @@ class Home extends CI_Controller {
 
 		}
 
+		$this->load->view('v_header');
 		$this->load->view('v_highlight', $data);
 
 	}
@@ -137,6 +141,7 @@ class Home extends CI_Controller {
 	*/
 	public function profil() {
 
+		$this->load->view('v_header');
 		$this->load->view('v_profile');
 
 	}

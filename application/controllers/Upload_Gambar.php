@@ -62,17 +62,21 @@ class Upload_Gambar extends CI_Controller {
 				$this->ModelGambar->insertFileGambar($data);
 
 				$upload_message['upload_success_or_failed'] = "Upload sukses!";
+
+				$this->load->view('v_header');
 				$this->load->view('v_upload', $upload_message);
 
 			} else {
 
 				$upload_message['upload_success_or_failed'] = "Upload gagal!";
+				$this->load->view('v_header');
 				$this->load->view('v_upload', $upload_message);
 
 			}
 
 		} else {
 
+			$this->load->view('v_header');
 			$this->load->view('v_upload', $upload_message);
 
 		}

@@ -104,9 +104,10 @@
 			<br>
 			
 			<div class="col-md-6">
-			
-			<b href="#">user_kece</b>   Apa komentarmu? <p>
-			<b href="#">user_kece1</b>  Bagus... ?
+
+			<?php foreach ($semua_komentar as $value) { ?>
+				<b><?php echo $value->username; ?></b> <?php echo $value->comment; ?><br>
+			<?php } ?>
 			
 			<hr color="black">
 		

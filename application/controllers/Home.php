@@ -63,6 +63,8 @@ class Home extends CI_Controller {
 
 		$data['user'] = $this->UserModel->getUserDatabyId($data['highlight']->id_user);
 
+		$data['semua_komentar'] = $this->CommentModel->getCommentByIdGambar($data['highlight']->id_gambar);
+
 		if ($this->input->post('submitcomment') !== null) {
 
 			$data_comment['id_gambar'] = $data['highlight']->id_gambar;

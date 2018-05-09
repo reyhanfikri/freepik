@@ -128,9 +128,9 @@
 			
 			<br>
 		
-			<form action="/action_page.php">
+			<form action="<?php echo site_url('home/highlight/'.$highlight->nama_file); ?>" method="post">
 		        	<textarea name="komentar" placeholder="komentar" style="width: 275px; height:100px"></textarea>
-		        	<button type="submit" class="btn btn-default">Submit</button>
+		        	<button type="submit" class="btn btn-default" name="submitcomment">Submit</button>
 			</form>
 			</div>
 		

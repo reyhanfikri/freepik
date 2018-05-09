@@ -51,6 +51,25 @@ class Home extends CI_Controller {
 	}
 
 	/**
+	* Metode untuk mencari gambar dengan user interface yang sama dengan beranda
+	* URL : http://localhost/freepik/cari_gambar
+	*/
+	public function cari_gambar()
+	{
+		if ($this->input->get('search') !== null) {
+			
+				$data['semua_gambar'] = $this->searchGambar($this->input->get('search'));
+
+				$this->load->view('v_home', $data);
+
+		} else {
+
+			redirect(site_url());
+
+		}
+	}
+
+	/**
 	* Metode untuk laman hasil gambar
 	* URL : http://localhost/freepik/highlight
 	*/
@@ -97,6 +116,17 @@ class Home extends CI_Controller {
 	public function loadAllGambar() {
 
 		$data_gambar = $this->ModelGambar->getAllGambar();
+
+		return $data_gambar;
+
+	}
+
+	/**
+	* Metode untuk menampilkan gambar dengan kata kunci yang diketik
+	*/
+	public function searchGambar($search) {
+
+		$data_gambar = $this->ModelGambar->getGambarBySearch($search);
 
 		return $data_gambar;
 

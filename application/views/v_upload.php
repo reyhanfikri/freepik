@@ -21,9 +21,9 @@
       <a class="navbar-brand" href="<?php echo site_url() ?>"><img height="35px" width="35px" src="<?php echo site_url('assets/img/WebsiteLogo2.png') ?>"></a>
       <div class="topnav">
         <div class="search-container">
-          <form action="#">
-            <input style="width: 500px; height: 35px; padding-left: 10px;" type="text" placeholder="Search" name="search">
-            <button style ="width:40px; height: 35px;" type="submit"><i class="fa fa-search"></i></button>
+          <form action="<?php echo site_url('cari_gambar'); ?>" method="get">
+              <input style="width: 500px; height: 35px; padding-left: 10px;" type="text" placeholder="Search" name="search">
+              <button style ="width:40px; height: 35px;" type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
       </div>

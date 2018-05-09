@@ -28,6 +28,14 @@
 
 		}
 
+		public function getGambarBySearch($search) {
+
+			$q = $this->db->query("SELECT * FROM t_gambar WHERE nama_gambar LIKE '%".$search."%'");
+
+			return $q->result();
+
+		}
+
 		public function getGambarbyNamaFile($nama_file) {
 
 			$q = $this->db->select('*')->from('t_gambar')->where('nama_file', $nama_file)->limit(1)->get();

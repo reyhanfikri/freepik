@@ -22,7 +22,7 @@
 		  <div class="topnav">
   			<div class="search-container">
     		  <form action="#">
-      		  <input style="width: 500px; height: 35px;" type="text" placeholder="&nbsp;&nbsp;&nbsp;Search" name="search">
+      		  <input style="width: 500px; height: 35px; padding-left: 10px;" type="text" placeholder="Search" name="search">
       		  <button style ="width:40px; height: 35px;" type="submit"><i class="fa fa-search"></i></button>
     		  </form>
   			</div>

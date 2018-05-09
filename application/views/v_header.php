@@ -38,7 +38,7 @@
 
 		      	<div class="col-md-3"> </div>
 			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url() ?>">Home</a>
-			  	<a href="#">
+			  	<a href="<?php echo site_url('profil'); ?>">
 			  		<img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/account-avatar-male-man-person-profile-363ed8899dda8c42-512x512.png" alt="Username" style="width:40px;">
 			  	</a>
 			  	<a class="navbar-nav mr-auto" style="color: white; " href="<?php echo site_url('profil'); ?>"><?php echo $this->CookieModel->getCookie(); ?></a>

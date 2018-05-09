@@ -35,13 +35,17 @@ class Home extends CI_Controller {
 
 			}else {
 
-				$this->load->view('v_home', $this->loadAllGambar());
+				$data['semua_gambar'] = $this->loadAllGambar();
+
+				$this->load->view('v_home', $data);
 
 			}
 
 		}else {
 
-			$this->load->view('v_home', $this->loadAllGambar());
+			$data['semua_gambar'] = $this->loadAllGambar();
+
+			$this->load->view('v_home', $data);
 
 		}
 	}
@@ -90,9 +94,9 @@ class Home extends CI_Controller {
 	*/
 	public function loadAllGambar() {
 
-		$data['semua_gambar'] = $this->ModelGambar->getAllGambar();
+		$data_gambar = $this->ModelGambar->getAllGambar();
 
-		return $data;
+		return $data_gambar;
 
 	}
 

@@ -13,7 +13,7 @@ class Profil extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper(array('form'));
-		$this->load->model(array('UserModel', 'CookieModel', 'ModelGambar', 'CommentModel'));
+		$this->load->model(array('UserModel', 'CookieModel', 'UserProfileModel'));
 	}
 
 	/**
@@ -21,12 +21,16 @@ class Profil extends CI_Controller {
 	*/
 	public function index() {
 
-		$cookie = $this->CookieModel->getCookie();
+		$data['cookie'] = $this->CookieModel->getCookie();
 
-		if ($cookie !== null){
+		if ($data['cookie'] !== null){
+
+			$data['user_data'] = $this->UserModel->getUserData($data['cookie']);
+			$data['user_profile_data'] = $this->UserProfileModel->getUserProfileData(
+				$data['user_data']->id);
 
 			$this->load->view('v_header');
-			$this->load->view('v_profile');
+			$this->load->view('v_profile', $data);
 
 		}else{
 

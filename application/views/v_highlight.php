@@ -55,9 +55,15 @@
 				<img src="http://pngimages.net/sites/default/files/comment-png-image-68678.png" alt="Comment" style="width:40px;">
 		
 			</a>
+
+			<a href="#" >
+		
+				<img src="https://image.flaticon.com/icons/svg/69/69656.svg" alt="Download" style="width:40px;">
+		
+			</a>
 		
 			<br>
-			
+				<p align="left"><?php echo $highlight->jumlah_like; ?> Likes</p>
 				<p align="right"><?php echo $highlight->jumlah_view; ?> Views</p>
 			
 			<br>

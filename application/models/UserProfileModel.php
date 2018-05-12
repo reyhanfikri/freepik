@@ -21,6 +21,16 @@
 			return $query->row();
 
 		}
+
+		public function updateUserProfileData($id_user_profile, $nama_lengkap, $jenis_kelamin, $alamat) {
+
+			$query = $this->db->set('nama_lengkap', $nama_lengkap)->where('id_user_profile', $id_user_profile)->update('t_user_profile');
+
+			$query = $this->db->set('jenis_kelamin', $jenis_kelamin)->where('id_user_profile', $id_user_profile)->update('t_user_profile');
+
+			$query = $this->db->set('alamat', $alamat)->where('id_user_profile', $id_user_profile)->update('t_user_profile');
+
+		}
 		
 	}
 

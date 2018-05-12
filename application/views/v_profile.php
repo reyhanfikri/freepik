@@ -25,15 +25,16 @@
         <div style="padding-left: 500px">
             <div class="outter-form-login" style="width:400px; padding-top: 20px; padding-bottom: 10px; position: absolute;">
             	<div class="logo-login">
-	                <form action="#" method="#">
+	                <form action="<?php echo site_url('profil/updateUserProfile') ?>" method="post">
 	                	<h3>Profile Information</h3>
+	                	<input type="hidden" name="id_user_profile" value="<?php echo $user_profile_data->id_user_profile; ?>">
 	                	<b>Username</b>
 	                    <div class="form-group" style="width: 270px;">
-	                        <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $user_data->username; ?>">
+	                        <input disabled="true" type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $user_data->username; ?>">
 	                    </div>
 	                	<b>Nama Lengkap</b>
 	                    <div class="form-group" style="width: 270px;">
-	                        <input type="text" class="form-control" name="realname" placeholder="Nama Lengkap" value="<?php 
+	                        <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" value="<?php 
 	                        	if ($user_profile_data->nama_lengkap !== null) {
 		            		
 				            		echo $user_profile_data->nama_lengkap;
@@ -50,27 +51,38 @@
 	                        if ($user_profile_data->jenis_kelamin !== null) { 
 	                        	if ($user_profile_data->jenis_kelamin == "Laki-laki") { ?>
 				            	<div class="form-group">
-			                        <input type="radio" name="gender" value="Laki-laki" checked> Laki-laki<br>
-			  						<input type="radio" name="gender" value="Perempuan"> Perempuan<br>
+			                        <input type="radio" name="jenis_kelamin" value="Laki-laki" checked> Laki-laki<br>
+			  						<input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br>
 			                    </div>
 				        <?php   } else if ($user_profile_data->jenis_kelamin == "Perempuan") { ?>
 				        		<div class="form-group">
-			                        <input type="radio" name="gender" value="Laki-laki"> Laki-laki<br>
-			  						<input type="radio" name="gender" value="Perempuan" checked> Perempuan<br>
+			                        <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki<br>
+			  						<input type="radio" name="jenis_kelamin" value="Perempuan" checked> Perempuan<br>
 			                    </div>
 			            <?php 	}   
 			        		} else { ?>
 				            	<div class="form-group">
-			                        <input type="radio" name="gender" value="Laki-laki"> Laki-laki<br>
-			  						<input type="radio" name="gender" value="Perempuan"> Perempuan<br>
+			                        <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki<br>
+			  						<input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br>
 			                    </div>
 				        <?php } ?>
 	                    <b>Alamat</b>
 	                    <div class="form-group">
-	                        <textarea name="address" placeholder="Alamat" style="width: 270px; height:100px"></textarea>
+	                        <textarea name="alamat" placeholder="Alamat" style="width: 270px; height:100px"><?php 
+		                        	if ($user_profile_data->alamat !== null) {
+			            		
+					            		echo $user_profile_data->alamat;
+
+					            	} else {
+
+					            		echo "";
+
+					            	}
+	                         	?>
+	                        </textarea>
 	                    </div>
-	                    <div style="padding-left: 10em;">
-	                    	<a href="#" class="next">Save changes</a>
+	                    <div style="padding-left: 8em;">
+	                    	<input type="submit" name="submit" class="btn btn-info" value="Simpan Perubahan">
 	                    </div>
 	                </form>
             	</div>

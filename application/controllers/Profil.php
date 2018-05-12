@@ -38,4 +38,27 @@ class Profil extends CI_Controller {
 
 		}	
 	}
+
+	public function updateUserProfile() {
+
+		if ($this->input->post('submit') !== null) {
+
+			$nama_lengkap = $this->input->post('nama_lengkap');
+			$jenis_kelamin = $this->input->post('jenis_kelamin');
+			$alamat = $this->input->post('alamat');
+
+			if ($nama_lengkap != "" || $jenis_kelamin != "" || $alamat != "") {
+
+				$id_user_profile = $this->input->post('id_user_profile');
+
+				$update_process = $this->UserProfileModel->updateUserProfileData($id_user_profile, $nama_lengkap, $jenis_kelamin
+					, $alamat);
+
+			}
+
+		}
+
+		redirect(site_url('profil'));
+
+	}
 }

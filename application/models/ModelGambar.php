@@ -52,6 +52,14 @@
 
 		}
 
+		public function iterateJumlahLike($id, $jumlah_like) {
+
+			$jumlah_like++;
+
+			$q = $this->db->set('jumlah_like', $jumlah_like)->where('id_gambar', $id)->update('t_gambar');
+
+		}
+
 	}
 
 ?>

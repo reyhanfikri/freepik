@@ -114,6 +114,16 @@ class Home extends CI_Controller {
 
 	}
 
+	public function likeGambar($nama_file, $jumlah_like) {
+
+		$data = $this->ModelGambar->getGambarbyNamaFile($nama_file);
+
+		$this->ModelGambar->iterateJumlahLike($data->id_gambar, $jumlah_like);
+
+		redirect(site_url('highlight/'.$nama_file));
+
+	}
+
 	/**
 	* Metode untuk menampilkan gambar di beranda
 	*/

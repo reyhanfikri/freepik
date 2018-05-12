@@ -44,7 +44,7 @@
 			
 			<hr color="black">
 		
-			<a href="#" >
+			<a href="<?php echo site_url('likeGambar/'.$highlight->nama_file.'/'.$highlight->jumlah_like); ?>" >
 		
 				<img src="https://image.flaticon.com/icons/png/512/66/66845.png" alt="Like" style="width:40px;">
 			

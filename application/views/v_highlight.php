@@ -56,7 +56,7 @@
 		
 			</a>
 
-			<a href="#" >
+			<a href="<?php echo site_url('upload/'.$highlight->nama_file); ?>" download>
 		
 				<img src="https://image.flaticon.com/icons/svg/69/69656.svg" alt="Download" style="width:40px;">
 		

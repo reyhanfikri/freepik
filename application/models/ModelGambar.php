@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	* Model class untuk manajemen gambar
+	* Model class untuk manajemen data gambar pada database dan mendapatkan gambar dari database
 	*/
 	class ModelGambar extends CI_Model {
 		
@@ -14,12 +14,18 @@
 			
 		}
 
+		/**
+		* Metode untuk memasukkan data gambar yang diupload user
+		*/
 		public function insertFileGambar($data) {
 
 			$this->db->insert('t_gambar', $data);
 
 		}
 
+		/**
+		* Metode untuk mendapatkan semua data gambar
+		*/
 		public function getAllGambar() {
 
 			$q = $this->db->select('*')->from('t_gambar')->get();
@@ -28,6 +34,9 @@
 
 		}
 
+		/**
+		* Metode untuk mendapatkan data gambar berdasarkan kata kunci yang diketik user
+		*/
 		public function getGambarBySearch($search) {
 
 			$q = $this->db->query("SELECT * FROM t_gambar WHERE nama_gambar LIKE '%".$search."%'");
@@ -36,6 +45,9 @@
 
 		}
 
+		/**
+		* Metode untuk mendapatkan data gambar berdasarkan nama filenya 
+		*/
 		public function getGambarbyNamaFile($nama_file) {
 
 			$q = $this->db->select('*')->from('t_gambar')->where('nama_file', $nama_file)->limit(1)->get();
@@ -44,6 +56,9 @@
 
 		}
 
+		/**
+		* Metode untuk mengupdate jumlah view suatu gambar pada database
+		*/
 		public function iterateJumlahView($id, $jumlah_view) {
 
 			$jumlah_view++;
@@ -52,6 +67,9 @@
 
 		}
 
+		/**
+		* Metode untuk mengupdate jumlah like suatu gambar pada database
+		*/
 		public function iterateJumlahLike($id, $jumlah_like) {
 
 			$jumlah_like++;

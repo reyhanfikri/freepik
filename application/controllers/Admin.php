@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk laman admin
+* Class untuk manajemen laman admin dan proses hapus akun user
 */
 class Admin extends CI_Controller {
 
@@ -48,7 +48,8 @@ class Admin extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk menghapus user
+	* Metode untuk menghapus akun user
+	* URL : http://localhost/freepik/admin/hapus_user/$id
 	*/
 	public function hapus_user($id) {
 

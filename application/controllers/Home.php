@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk laman gallery online
+* Class untuk manajemen laman beranda dan laman highlight
 */
 class Home extends CI_Controller {
 
@@ -73,7 +73,7 @@ class Home extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk laman hasil gambar
+	* Metode untuk laman hasil klik gambar
 	* URL : http://localhost/freepik/highlight
 	*/
 	public function highlight($nama_file)
@@ -114,6 +114,10 @@ class Home extends CI_Controller {
 
 	}
 
+	/**
+	* Metode untuk proses like gambar
+	* URL : http://localhost/freepik/likeGambar/$nama_file/$jumlah_like
+	*/
 	public function likeGambar($nama_file, $jumlah_like) {
 
 		if ($this->CookieModel->getIdCookie() !== null) {
@@ -134,6 +138,7 @@ class Home extends CI_Controller {
 
 	/**
 	* Metode untuk menampilkan gambar di beranda
+	* URL : http://localhost/freepik/loadAllGambar
 	*/
 	public function loadAllGambar() {
 
@@ -145,22 +150,13 @@ class Home extends CI_Controller {
 
 	/**
 	* Metode untuk menampilkan gambar dengan kata kunci yang diketik
+	* URL : http://localhost/freepik/searchGambar/$search
 	*/
 	public function searchGambar($search) {
 
 		$data_gambar = $this->ModelGambar->getGambarBySearch($search);
 
 		return $data_gambar;
-
-	}
-
-	/**
-	* Metode untuk laman profil
-	*/
-	public function profil() {
-
-		$this->load->view('v_header');
-		$this->load->view('v_profile');
 
 	}
 }

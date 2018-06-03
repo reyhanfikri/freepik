@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	* Model class untuk manajemen login
+	* Model class untuk validasi login user dan admin
 	*/
 	class AccountModel extends CI_Model {
 		
@@ -15,9 +15,7 @@
 		}
 
 		/**
-		* Metode untuk proses login (Untuk user dan admin)
-		* Menerima input berupa string username dan string password
-		* Mengeluarkan output berupa string kalimat
+		* Metode untuk validasi login ke database (Untuk user dan admin)
 		*/
 		public function login($xusername, $xpassword){
 

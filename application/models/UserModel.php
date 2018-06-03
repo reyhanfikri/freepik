@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	* Model class untuk manajemen user
+	* Model class untuk manajemen data user pada database
 	*/
 	class UserModel extends CI_Model {
 		
@@ -15,9 +15,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan data user pada table t_user berdasarkan username user
-		* Menerima input berupa string username
-		* Mengeluarkan output berupa objek
+		* Metode untuk mendapatkan data user berdasarkan username user
 		*/
 		public function getUserData($xusername){
 
@@ -28,9 +26,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan data user pada table t_user berdasarkan email user
-		* Menerima input berupa string email
-		* Mengeluarkan output berupa objek
+		* Metode untuk mendapatkan data user berdasarkan email user
 		*/
 		public function getUserDatabyEmail($xemail){
 
@@ -41,9 +37,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan data user pada table t_user berdasarkan id user
-		* Menerima input berupa string id
-		* Mengeluarkan output berupa objek
+		* Metode untuk mendapatkan data user berdasarkan id user
 		*/
 		public function getUserDatabyId($xid){
 
@@ -54,9 +48,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan seluruh data user pada table t_user kecuali data admin
-		* Tidak menerima input
-		* Mengeluarkan output berupa array
+		* Metode untuk mendapatkan seluruh data user kecuali data admin
 		*/
 		public function getAllUserData(){
 
@@ -67,9 +59,7 @@
 		}
 
 		/**
-		* Metode untuk memasukkan data register ke dalam database (Dimasukkan ke table t_user dan t_user_profil)
-		* Menerima input berupa string email, string username, dan string password
-		* Tidak mengeluarkan output
+		* Metode untuk memasukkan data user ke dalam data user dan user profile dalam database
 		*/
 		public function insertData($xemail, $xusername, $xpassword){
 
@@ -82,9 +72,7 @@
 		}
 
 		/**
-		* Metode untuk menghapus data user pada tabel t_user dan t_user_profil
-		* Menerima input berupa integer id
-		* Tidak mengeluarkan output
+		* Metode untuk menghapus data user dari database
 		*/
 		public function deleteData($xid){
 

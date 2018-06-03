@@ -2,11 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk laman home
+* Class untuk laman upload gambar
 */
 class Upload_Gambar extends CI_Controller {
-
-	
 
 	/**
 	* Metode konstruktor
@@ -37,10 +35,8 @@ class Upload_Gambar extends CI_Controller {
 
 			$this->load->library('upload', $config);
 
-			// execute
 			if ($this->upload->do_upload('userfile')) {
 
-				// Insert to DB
 				$data['id_user'] = $this->CookieModel->getIdCookie();
 				$data['id_ekstensi_gambar'] = 1;
 

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk manajemen akun
+* Class untuk manajemen proses login, logout, dan register
 */
 class Account extends CI_Controller {
 
@@ -81,16 +81,10 @@ class Account extends CI_Controller {
 						$this->CookieModel->setCookie($username, $user_data->id);
 
 						if ($user_data->id_role == 1){
-							/*
-							* Jika user adalah user biasa
-							*/
 
 							redirect(site_url());
 
 						}else {
-							/*
-							* Jika user adalah user admin
-							*/
 
 							redirect(site_url('admin'));
 
@@ -111,16 +105,10 @@ class Account extends CI_Controller {
 			$user_data = $this->UserModel->getUserData($cookie);
 
 			if ($user_data->id_role == 1){
-				/*
-				* Jika user adalah user biasa
-				*/
 
 				redirect(site_url());
 
 			}else {
-				/*
-				* Jika user adalah user admin
-				*/
 
 				redirect(site_url('admin'));
 
@@ -131,6 +119,7 @@ class Account extends CI_Controller {
 
 	/**
 	* Metode untuk proses logout
+	* URL : http://localhost/freepik/logout
 	*/
 	public function logout()
 	{
@@ -150,7 +139,7 @@ class Account extends CI_Controller {
 	}
 
 	/**
-	* Metode untuk register
+	* Metode untuk register user
 	* URL : http://localhost/freepik/register
 	*/
 	public function register()
@@ -258,16 +247,10 @@ class Account extends CI_Controller {
 			$user_data = $this->UserModel->getUserData($cookie);
 
 			if ($user_data->id_role == 1){
-				/*
-				* Jika user adalah user biasa
-				*/
 
 				redirect(site_url());
 
 			}else {
-				/*
-				* Jika user adalah user admin
-				*/
 
 				redirect(site_url('admin'));
 

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
-* Class untuk laman gallery online
+* Class untuk laman profil user
 */
 class Profil extends CI_Controller {
 
@@ -18,6 +18,7 @@ class Profil extends CI_Controller {
 
 	/**
 	* Metode default
+	* URL : http://localhost/freepik/profil
 	*/
 	public function index() {
 
@@ -39,6 +40,10 @@ class Profil extends CI_Controller {
 		}	
 	}
 
+	/**
+	* Metode untuk update profil user
+	* URL : http://localhost/freepik/profil/updateUserProfile
+	*/
 	public function updateUserProfile() {
 
 		if ($this->input->post('submit') !== null) {

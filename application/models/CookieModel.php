@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	* Model class untuk manajemen cookie
+	* Model class untuk mengeset dan mendapatkan cookie id user dan username user
 	*/
 	class CookieModel extends CI_Model {
 		
@@ -15,9 +15,7 @@
 		}
 
 		/**
-		* Metode untuk mengeset cookie pada saat user login
-		* Menerima input berupa string username
-		* Tidak mengeluarkan output
+		* Metode untuk mengeset cookie
 		*/
 		public function setCookie($xusername, $xid){
 
@@ -27,9 +25,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan cookie nama user pada user saat login
-		* Tidak menerima input
-		* Mengeluarkan output berupa string atau null
+		* Metode untuk mendapatkan cookie yang berisi username user
 		*/
 		public function getCookie(){
 
@@ -48,9 +44,7 @@
 		}
 
 		/**
-		* Metode untuk mendapatkan cookie id user pada user saat login
-		* Tidak menerima input
-		* Mengeluarkan output berupa string atau null
+		* Metode untuk mendapatkan cookie yang berisi id user
 		*/
 		public function getIdCookie(){
 

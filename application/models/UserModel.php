@@ -11,6 +11,7 @@
 		public function __construct(){
 
 			parent::__construct();
+
 			
 		}
 
@@ -75,6 +76,18 @@
 		* Metode untuk menghapus data user dari database
 		*/
 		public function deleteData($xid){
+
+			$query = $this->db->query("SELECT id_gambar FROM t_gambar WHERE id_user = ".$xid.";")->result();
+
+			foreach ($query as $value) {
+
+				$query2 = $this->db->query("DELETE FROM t_comment WHERE id_gambar = ".$value->id_gambar.";");
+
+				$query2 = $this->db->query("DELETE FROM t_comment WHERE id_user = ".$xid.";");
+				
+			}
+
+			$query = $this->db->query("DELETE FROM t_gambar WHERE id_user = ".$xid.";");
 
 			$query = $this->db->query("DELETE FROM t_user_profile WHERE id_user = ".$xid.";");
 
